@@ -1,3 +1,25 @@
+"""
+Copyright (c) 2021 Cisco and/or its affiliates.
+
+This software is licensed to you under the terms of the Cisco Sample
+Code License, Version 1.1 (the "License"). You may obtain a copy of the
+License at
+
+               https://developer.cisco.com/docs/licenses
+
+All use of the material herein must be in accordance with the terms of
+the License. All rights not expressly granted by the License are
+reserved. Unless required by applicable law or agreed to separately in
+writing, software distributed under the License is distributed on an "AS
+IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+or implied.
+"""
+
+__author__ = "Chris McHenry"
+__copyright__ = "Copyright (c) 2021 Cisco and/or its affiliates."
+__license__ = "Cisco Sample Code License, Version 1.1"
+
+
 import json
 import argparse
 from tetpyclient import RestClient
@@ -35,35 +57,6 @@ def getConversations(workspace):
             offset = None
 
     return conversations
-
-
-def getInventory():
-    inventory = []
-    offset = None
-    workspace
-    req_payload = {
-        "filter": {
-        },
-        "limit": 100
-    }
-    result = rc.post(
-        '/inventory/search', json_body=json.dumps(req_payload)).json()
-    inventory = inventory + result['results']
-
-    if 'offset' in result:
-        offset = result['offset']
-
-    while offset != None:
-        req_payload['offset'] = offset
-        result = rc.post(
-            '/inventory/search', json_body=json.dumps(req_payload)).json()
-        inventory = inventory + result['results']
-        if 'offset' in result:
-            offset = result['offset']
-        else:
-            offset = None
-
-    return inventory
 
 
 """
@@ -106,10 +99,6 @@ if workspace['latest_adm_version'] == 0:
 conversations = getConversations(workspace=workspace)
 print(len(conversations))
 conv_df = pd.DataFrame(conversations)
-
-# inventory = getInventory()
-# inventory = [x['ip'] for x in inventory]
-# print(inventory)
 
 # Filter Tanium
 conv_df = conv_df[conv_df['port'] != '17472']
