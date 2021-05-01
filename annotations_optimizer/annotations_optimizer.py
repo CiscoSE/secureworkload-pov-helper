@@ -1,10 +1,12 @@
-
 """
-Copyright (c) 2018 Cisco and/or its affiliates.
+Copyright (c) 2021 Cisco and/or its affiliates.
+
 This software is licensed to you under the terms of the Cisco Sample
-Code License, Version 1.0 (the "License"). You may obtain a copy of the
+Code License, Version 1.1 (the "License"). You may obtain a copy of the
 License at
+
                https://developer.cisco.com/docs/licenses
+
 All use of the material herein must be in accordance with the terms of
 the License. All rights not expressly granted by the License are
 reserved. Unless required by applicable law or agreed to separately in
@@ -14,8 +16,8 @@ or implied.
 """
 
 __author__ = "Chris McHenry"
-__copyright__ = "Copyright (c) 2018 Cisco and/or its affiliates."
-__license__ = "Cisco Sample Code License, Version 1.0"
+__copyright__ = "Copyright (c) 2021 Cisco and/or its affiliates."
+__license__ = "Cisco Sample Code License, Version 1.1"
 
 import json
 import argparse
@@ -63,7 +65,7 @@ def getConversations(workspace):
 """
 Main execution routine
 """
-parser = argparse.ArgumentParser(description='Tetration Policy to XLS')
+parser = argparse.ArgumentParser(description='Secure Workload PoV Helper - Annotations Optimizer')
 parser.add_argument('--maxsubnets', type=int, default=120, help='Maximum number of subnet entries allowed in an annotations file for PoV')
 parser.add_argument('--maxhosts', type=int, default=6000, help='Maximum number of host entries allowed in an annotations file for PoV')
 parser.add_argument('--debug', nargs='?',

@@ -62,13 +62,15 @@ def getConversations(workspace):
 """
 Main execution routine
 """
-parser = argparse.ArgumentParser(description='Tetration Policy to XLS')
-parser.add_argument('--tet_url', help='Tetration URL', type=str)
+parser = argparse.ArgumentParser(
+    description='Secure Workload PoV Helper - DNS Get Top Talkers - RUN FIRST')
+parser.add_argument('--tet_url', help='Tetration URL', type=str,required=True)
 parser.add_argument('--tet_creds', type=str,
-                    help='Tetration API Credentials File')
+                    help='Tetration API Credentials File',required=True)
 parser.add_argument('--workspace', type=str, default=None,
-                    help='Target Workspace for Conversations')
-parser.add_argument('--subnets', type=str, default=None, help='Subnets in comma separated list')
+                    help='Name of the Target Workspace for Conversations. If multiple workspaces have the same name, this may be random.  If not provided, it will default to a workspace for the root scope')
+parser.add_argument('--subnets', type=str, default=None,
+                    help='Additional subnets other than RFC1918 addresses where resolution is needed, ex: customer-owned public IP space.  Provide in a comma separated list in CIDR notation.')
 args = parser.parse_args()
 
 rc = RestClient(args.tet_url, credentials_file=args.tet_creds, verify=True)
@@ -132,7 +134,8 @@ for address in addresses:
             if candidate in subnet:
                 filtered_addresses.append(address)
 
-print('Creating seed file "top_talkers.json" based on Tetration inventory with {} IPs.'.format(len(filtered_addresses)))
+print('Creating seed file "top_talkers.json" based on Tetration inventory with {} IPs.'.format(
+    len(filtered_addresses)))
 with open('top_talkers.json', 'w') as f:
     f.write(json.dumps(filtered_addresses))
     f.close()
