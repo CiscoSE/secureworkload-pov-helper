@@ -54,7 +54,7 @@ python3 get_top_talkers.py --tet_url=https://sales3.tetrationpreview.com --tet_c
 ## Step 2: dns_helper.ps1 Usage Example
 This should be run from within the same network where agents are deployed for the PoV.  The top_talker.json file from step 1 should be in the same folder.
 ```
-PS /Users/chmchenr/Documents/Scripting/tet-pov-builder/dns_helper> ./dns_helper.ps1                                                                                                                                  Resolving Unknown IPs                                                                                        Processing                                                                                                [ooooooooooooooooooo                                                                           ]                                                                                                                    10.1.2.3       
+PS /tet-pov-builder/dns_helper> ./dns_helper.ps1                                                                                                                                  Resolving Unknown IPs                                                                                        Processing                                                                                                [ooooooooooooooooooo                                                                           ]                                                                                                                    10.1.2.3       
 ```
 
 ## Step 3:
