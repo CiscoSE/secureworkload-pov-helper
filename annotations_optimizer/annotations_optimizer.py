@@ -72,11 +72,11 @@ parser.add_argument('--debug', nargs='?',
                     choices=['verbose', 'warnings', 'critical'],
                     const='critical',
                     help='Enable debug messages.')
-parser.add_argument('--tet_url', help='Tetration URL',type=str)
-parser.add_argument('--tet_creds',type=str, help='Tetration API Credentials File')
-parser.add_argument('--annotations_file',type=str, help='Customer Annotations File')
-parser.add_argument('--ip_field',type=str, help='Customer Annotations File')
-parser.add_argument('--fields',type=str,help='Comma Separate List of Important Annotation Fields')
+parser.add_argument('--tet_url', help='Tetration URL',type=str,required=True)
+parser.add_argument('--tet_creds',type=str, help='Tetration API Credentials File',required=True)
+parser.add_argument('--annotations_file',type=str, help='Customer Annotations File',required=True)
+parser.add_argument('--ip_field',type=str, help='Customer Annotations File',required=True)
+parser.add_argument('--fields',type=str,help='Comma Separate List of Important Annotation Fields',required=True)
 parser.add_argument("--upload", type=str2bool, nargs='?',
                         const=True, default=False,
                         help="If set, the script will also upload the reduced annotations file to Tetration.")
