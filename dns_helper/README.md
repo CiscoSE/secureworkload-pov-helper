@@ -48,13 +48,13 @@ python3 get_top_talkers.py --tet_url=https://sales3.tetrationpreview.com --tet_c
 
 ## Step 1: get_top_talkers.py Sample Output
 ```
-["10.27.64.140", "10.27.64.145", "10.28.194.82", "172.25.105.224",...]
+["10.1.2.3", "10.1.2.4", "10.1.2.5", "10.1.2.6",...]
 ```
 
 ## Step 2: dns_helper.ps1 Usage Example
 This should be run from within the same network where agents are deployed for the PoV.  The top_talker.json file from step 1 should be in the same folder.
 ```
-PS /Users/chmchenr/Documents/Scripting/tet-pov-builder/dns_helper> ./dns_helper.ps1                                                                                                                                  Resolving Unknown IPs                                                                                        Processing                                                                                                [ooooooooooooooooooo                                                                           ]                                                                                                                    10.27.64.202       
+PS /Users/chmchenr/Documents/Scripting/tet-pov-builder/dns_helper> ./dns_helper.ps1                                                                                                                                  Resolving Unknown IPs                                                                                        Processing                                                                                                [ooooooooooooooooooo                                                                           ]                                                                                                                    10.1.2.3       
 ```
 
 ## Step 3:
