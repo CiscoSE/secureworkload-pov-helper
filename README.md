@@ -6,3 +6,6 @@ A very common integration would be IPAM/Infoblox.  This integration helps Cisco 
 
 ## DNS Helper
 This script simulates the native DNS integration.  A first script queries Secure Workload for all of the inventory IPs that need DNS annotations.  This script will often be run by the Cisco architect or partner supporting the PoV.  From that script, a JSON file of IP's is generated.  The JSON file of IPs can be passed to the customer along with a PowerShell script that can be run on any Windows desktop from within the customer environment.  The output of the script will be a CSV that can directly be uploaded to Cisco Secure Workload to provide DNS FQDN as a label.
+
+## Conversations Exporter
+This script exports all conversations from a worskpace to a .xlsx format.

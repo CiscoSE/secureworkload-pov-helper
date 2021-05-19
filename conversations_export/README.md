@@ -1,7 +1,16 @@
-## Conversations Exporter
+# Conversations Exporter
 At the end of a PoV, the customer may want to keep raw conversation data for reference.  This script will download all conversations from a specific workspace, translate filter IDs to human-readable names, and export into an Excel spreadsheet that could then be analyzed.
 
-# Usage
+## Setup and Prerequisites
+```
+# clone this repository
+git clone https://github.com/tetration-exchange/pol-client-python.git && cd pol-client-python
+
+# install dependencies
+pip3 install -r requirements.txt
+```
+
+## Usage
 Command Line Arguments
 ```
 $ python3 conversations_export.py --help
