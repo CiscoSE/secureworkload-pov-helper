@@ -25,8 +25,6 @@ import argparse
 from tetpyclient import RestClient
 import pandas as pd
 import ipaddress
-from tqdm import tqdm
-from tempfile import NamedTemporaryFile
 
 
 def getConversations(workspace):
