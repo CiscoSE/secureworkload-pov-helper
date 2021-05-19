@@ -4,7 +4,7 @@ At the end of a PoV, the customer may want to keep raw conversation data for ref
 ## Setup and Prerequisites
 ```
 # clone this repository
-git clone https://github.com/tetration-exchange/pol-client-python.git && cd pol-client-python
+git clone https://github.com/CiscoSE/secureworkload-pov-helper.git && cd secureworkload-pov-helper && cd conversations_export
 
 # install dependencies
 pip3 install -r requirements.txt
